@@ -12,7 +12,8 @@ A full-stack IELTS practice application built with React, TypeScript, Vinext/Nex
 - Writing task editor with live word count
 - Speaking Part 1–3 prompts and browser microphone recording
 - Full mock-test launcher, result screen, history and typing-speed practice
-- Firebase email/password authentication
+- Firebase email/password authentication, Google sign-in and password reset
+- Google Analytics initialization from the supplied measurement ID
 - Admin-only dashboard with create, edit, draft, publish, preview and delete
 - Structured question builder and Firebase Storage audio upload
 - Firestore security rules, indexes and Storage rules
@@ -34,14 +35,19 @@ npm run dev
 
 Open the URL printed in the terminal, normally `http://localhost:5173`.
 
-## Connect Firebase
+## Firebase project configuration
 
-1. Create a Firebase project at https://console.firebase.google.com/.
-2. Add a Web App to the project.
-3. Enable **Authentication → Sign-in method → Email/Password**.
+The supplied `ieltsscholars-addbc` Firebase Web App configuration is already included in `lib/firebase.ts`, `.env.example`, and `.env.local`. Firebase Web App configuration is client-visible by design; access is protected by Authentication and the included Firestore/Storage rules.
+
+In https://console.firebase.google.com/:
+
+1. Open the `ieltsscholars-addbc` project.
+2. Go to **Authentication → Sign-in method** and enable both **Email/Password** and **Google**.
+3. In **Authentication → Settings → Authorized domains**, add every production domain you will use. `localhost` should also be present for local development.
 4. Create a **Cloud Firestore** database.
 5. Enable **Firebase Storage**.
-6. Copy `.env.example` to `.env.local` and paste the Firebase Web App values.
+
+The configuration can still be overridden for another Firebase project with `.env.local`:
 
 ```env
 NEXT_PUBLIC_FIREBASE_API_KEY=...
@@ -50,6 +56,7 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
 NEXT_PUBLIC_FIREBASE_APP_ID=...
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=...
 ```
 
 Restart `npm run dev` after creating `.env.local`.
