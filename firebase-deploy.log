@@ -1,0 +1,73 @@
+[2026-08-25T15:50:54.313Z] ----------------------------------------------------------------------
+[2026-08-25T15:50:54.322Z] Command:       C:\nvm4w\nodejs\node.exe C:\Users\miaso\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions:ssr,hosting --project ieltsscholars-addbc
+[2026-08-25T15:50:54.326Z] CLI Version:   15.28.1
+[2026-08-25T15:50:54.329Z] Platform:      win32
+[2026-08-25T15:50:54.332Z] Node Version:  v22.18.0
+[2026-08-25T15:50:54.335Z] Detected Agent: codex_cli
+[2026-08-25T15:50:54.338Z] Time:          Tue Aug 25 2026 21:50:54 GMT+0600 (Bangladesh Standard Time)
+[2026-08-25T15:50:54.340Z] ----------------------------------------------------------------------
+
+[2026-08-25T15:50:58.059Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[2026-08-25T15:50:58.065Z] > authorizing via signed-in user (nazmul7762@gmail.com)
+[2026-08-25T15:50:58.065Z] [iam] checking project ieltsscholars-addbc for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[2026-08-25T15:50:58.090Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:50:58.090Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:50:58.094Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ieltsscholars-addbc:testIamPermissions [none]
+[2026-08-25T15:50:58.094Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ieltsscholars-addbc:testIamPermissions  x-goog-user-project=ieltsscholars-addbc
+[2026-08-25T15:50:58.095Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ieltsscholars-addbc:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[2026-08-25T15:50:59.665Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ieltsscholars-addbc:testIamPermissions 200
+[2026-08-25T15:50:59.670Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ieltsscholars-addbc:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[2026-08-25T15:50:59.672Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:50:59.672Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:50:59.673Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ieltsscholars-addbc/serviceAccounts/ieltsscholars-addbc@appspot.gserviceaccount.com:testIamPermissions [none]
+[2026-08-25T15:50:59.674Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ieltsscholars-addbc/serviceAccounts/ieltsscholars-addbc@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[2026-08-25T15:51:01.476Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ieltsscholars-addbc/serviceAccounts/ieltsscholars-addbc@appspot.gserviceaccount.com:testIamPermissions 200
+[2026-08-25T15:51:01.481Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ieltsscholars-addbc/serviceAccounts/ieltsscholars-addbc@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[2026-08-25T15:51:01.483Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:01.483Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:01.484Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ieltsscholars-addbc [none]
+[2026-08-25T15:51:02.440Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ieltsscholars-addbc 200
+[2026-08-25T15:51:02.441Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ieltsscholars-addbc {"projectId":"ieltsscholars-addbc","projectNumber":"886802870608","displayName":"IELTSScholars","name":"projects/ieltsscholars-addbc","resources":{"hostingSite":"ieltsscholars-addbc"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_35bc9450-0df6-4588-af69-b393f91e63f9"}
+
+=== Deploying to 'ieltsscholars-addbc'...
+
+i  deploying functions, hosting 
+[2026-08-25T15:51:02.455Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:02.456Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:02.457Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/ieltsscholars-addbc [none]
+[2026-08-25T15:51:02.799Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/ieltsscholars-addbc 200
+[2026-08-25T15:51:02.800Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/ieltsscholars-addbc {"projectNumber":"886802870608","projectId":"ieltsscholars-addbc","lifecycleState":"ACTIVE","name":"IELTSScholars","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-08-25T14:37:25.570Z"}
+i  functions: preparing codebase default for deployment 
+i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[2026-08-25T15:51:02.810Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:02.811Z] Checked if tokens are valid: true, expires at: 1787675525062
+i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[2026-08-25T15:51:02.814Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:02.815Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:02.816Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/cloudbuild.googleapis.com [none]
+[2026-08-25T15:51:02.817Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/cloudbuild.googleapis.com  x-goog-user-project=ieltsscholars-addbc
+[2026-08-25T15:51:02.822Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/artifactregistry.googleapis.com [none]
+[2026-08-25T15:51:02.823Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/artifactregistry.googleapis.com  x-goog-user-project=ieltsscholars-addbc
+[2026-08-25T15:51:04.672Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/cloudbuild.googleapis.com 200
+[2026-08-25T15:51:04.674Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/cloudbuild.googleapis.com [omitted]
+!  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[2026-08-25T15:51:04.676Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:04.677Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:04.677Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/cloudbuild.googleapis.com:enable [none]
+[2026-08-25T15:51:04.678Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/cloudbuild.googleapis.com:enable  x-goog-user-project=ieltsscholars-addbc
+[2026-08-25T15:51:04.785Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/artifactregistry.googleapis.com 200
+[2026-08-25T15:51:04.786Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/artifactregistry.googleapis.com [omitted]
+!  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[2026-08-25T15:51:04.787Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:04.788Z] Checked if tokens are valid: true, expires at: 1787675525062
+[2026-08-25T15:51:04.789Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/artifactregistry.googleapis.com:enable [none]
+[2026-08-25T15:51:04.790Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/artifactregistry.googleapis.com:enable  x-goog-user-project=ieltsscholars-addbc
+[2026-08-25T15:51:06.677Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/artifactregistry.googleapis.com:enable 400
+[2026-08-25T15:51:06.677Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/artifactregistry.googleapis.com:enable [omitted]
+[2026-08-25T15:51:06.694Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/cloudbuild.googleapis.com:enable 400
+[2026-08-25T15:51:06.695Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ieltsscholars-addbc/services/cloudbuild.googleapis.com:enable [omitted]
+
+Error: Your project ieltsscholars-addbc must be on the Blaze (pay-as-you-go) plan to complete this command. Required API artifactregistry.googleapis.com can't be enabled until the upgrade is complete. To upgrade, visit the following URL:
+
+https://console.firebase.google.com/project/ieltsscholars-addbc/usage/details

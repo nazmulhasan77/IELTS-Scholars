@@ -1,6 +1,8 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
+import { getFirebaseServices } from "../lib/firebase";
 
 type DemoSession = {
   module: string;
@@ -44,34 +46,65 @@ const modules = [
   },
 ];
 
+const demoSessions: Record<string, DemoSession> = {
+  Speaking: { module: "Speaking", duration: "3 minutes", prompt: "Describe a skill you would like to learn. Explain why it interests you and how you would begin learning it.", focus: ["Fluency", "Vocabulary", "Clear structure"] },
+  Writing: { module: "Writing", duration: "10 minutes", prompt: "Some people believe online learning is more effective than classroom learning. To what extent do you agree or disagree?", focus: ["Position", "Coherence", "Grammar range"] },
+  Reading: { module: "Reading", duration: "6 minutes", prompt: "Read a short academic passage and complete five questions using skimming, scanning, and evidence matching.", focus: ["Main idea", "Evidence", "Time control"] },
+  Listening: { module: "Listening", duration: "5 minutes", prompt: "Listen to a short university orientation extract and complete five note-completion questions.", focus: ["Prediction", "Spelling", "Detail"] },
+};
+
 export default function Home() {
   const [session, setSession] = useState<DemoSession | null>(null);
   const [sessionLoading, setSessionLoading] = useState(false);
   const [sessionError, setSessionError] = useState("");
   const [loginOpen, setLoginOpen] = useState(false);
-  const [loginDone, setLoginDone] = useState(false);
+  const [register, setRegister] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [authError, setAuthError] = useState("");
+  const [authBusy, setAuthBusy] = useState(false);
 
-  async function openSession(moduleName: string) {
+  function openSession(moduleName: string) {
     setSessionLoading(true);
     setSessionError("");
-    try {
-      const response = await fetch("/api/demo-session", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ module: moduleName }),
-      });
-      if (!response.ok) throw new Error("Could not prepare the session.");
-      setSession(await response.json() as DemoSession);
-    } catch {
+    const session = demoSessions[moduleName];
+    if (session) {
+      setSession(session);
+    } else {
       setSessionError("The practice session could not be loaded. Please try again.");
-    } finally {
-      setSessionLoading(false);
     }
+    setSessionLoading(false);
   }
 
-  function submitLogin(event: FormEvent<HTMLFormElement>) {
+  function authMessage(error: unknown) {
+    const code = typeof error === "object" && error && "code" in error ? String(error.code) : "";
+    const messages: Record<string, string> = {
+      "auth/email-already-in-use": "An account already exists for this email.", "auth/invalid-credential": "The email or password is incorrect.",
+      "auth/popup-blocked": "Your browser blocked the Google sign-in popup.", "auth/popup-closed-by-user": "Google sign-in was cancelled.",
+      "auth/unauthorized-domain": "This domain is not authorized in Firebase Authentication.", "auth/weak-password": "Use a password with at least 6 characters.",
+    };
+    return messages[code] || "Authentication failed. Please try again.";
+  }
+
+  async function submitLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setLoginDone(true);
+    const services = getFirebaseServices();
+    if (!services) return setAuthError("Firebase is not configured.");
+    setAuthBusy(true); setAuthError("");
+    try {
+      if (register) { const credential = await createUserWithEmailAndPassword(services.auth, email.trim(), password); if (name.trim()) await updateProfile(credential.user, { displayName: name.trim() }); }
+      else await signInWithEmailAndPassword(services.auth, email.trim(), password);
+      window.location.assign("/dashboard");
+    } catch (error) { setAuthError(authMessage(error)); setAuthBusy(false); }
+  }
+
+  async function googleLogin() {
+    const services = getFirebaseServices();
+    if (!services) return setAuthError("Firebase is not configured.");
+    setAuthBusy(true); setAuthError("");
+    try { const provider = new GoogleAuthProvider(); provider.setCustomParameters({ prompt: "select_account" }); await signInWithPopup(services.auth, provider); window.location.assign("/dashboard"); }
+    catch (error) { setAuthError(authMessage(error)); setAuthBusy(false); }
   }
 
   return (
@@ -88,7 +121,7 @@ export default function Home() {
           <a href="#pricing">Pricing</a>
         </nav>
         <div className="header-actions">
-          <button className="button button-ghost" onClick={() => { setLoginDone(false); setLoginOpen(true); }} type="button">Log in</button>
+          <button className="button button-ghost" onClick={() => setLoginOpen(true)} type="button">Log in</button>
           <a className="button button-dark" href="#practice">Start free</a>
         </div>
       </header>
@@ -288,7 +321,7 @@ export default function Home() {
               <h3>Free</h3>
               <p>Explore the platform and complete focused sample tests.</p>
               <ul><li>✓ 4 sample module tests</li><li>✓ Basic answer review</li><li>✓ Progress snapshot</li></ul>
-              <button className="button price-button" onClick={() => { setLoginDone(false); setLoginOpen(true); }} type="button">Create free account</button>
+              <button className="button price-button" onClick={() => setLoginOpen(true)} type="button">Create free account</button>
             </article>
             <article className="price-card featured-price">
               <span className="popular-pill">Most focused</span>
@@ -296,7 +329,7 @@ export default function Home() {
               <h3>৳799 <small>/ month</small></h3>
               <p>For candidates preparing seriously for a target test date.</p>
               <ul><li>✓ Full mock test library</li><li>✓ Detailed criterion feedback</li><li>✓ Personalised study plan</li><li>✓ Speaking and writing review</li></ul>
-              <button className="button button-primary" onClick={() => { setLoginDone(false); setLoginOpen(true); }} type="button">Start with free access</button>
+              <button className="button button-primary" onClick={() => setLoginOpen(true)} type="button">Start with free access</button>
             </article>
           </div>
         </div>
@@ -354,11 +387,19 @@ export default function Home() {
           <section aria-labelledby="login-title" aria-modal="true" className="modal-card login-modal" onMouseDown={(event) => event.stopPropagation()} role="dialog">
             <button aria-label="Close login dialog" className="modal-close" onClick={() => setLoginOpen(false)} type="button">×</button>
             <span className="brand-mark modal-brand">IS</span>
-            {loginDone ? (
-              <div className="login-success" role="status"><span>✓</span><h2>Prototype flow complete</h2><p>Your production version will connect this form to secure account authentication.</p><a className="button button-primary button-wide" href="/dashboard">Open demo dashboard</a></div>
-            ) : (
-              <><p className="kicker">Welcome back</p><h2 id="login-title">Continue to IELTS Scholars</h2><p>Enter your email to preview the member flow.</p><form onSubmit={submitLogin}><label htmlFor="email">Email address</label><input id="email" name="email" placeholder="you@example.com" required type="email" /><button className="button button-primary button-wide" type="submit">Continue with email →</button></form><small>Demo only—no account is created yet.</small></>
-            )}
+            <p className="kicker">{register ? "Create account" : "Welcome back"}</p>
+            <h2 id="login-title">{register ? "Start your IELTS journey" : "Continue to IELTS Scholars"}</h2>
+            <p>Sign in to save your practice and results.</p>
+            <button className="google-button" disabled={authBusy} onClick={googleLogin} type="button"><span aria-hidden="true">G</span> Continue with Google</button>
+            <div className="auth-divider"><span>or use email</span></div>
+            <form onSubmit={submitLogin}>
+              {register && <label htmlFor="name">Full name<input autoComplete="name" id="name" onChange={(event) => setName(event.target.value)} required value={name} /></label>}
+              <label htmlFor="email">Email address<input autoComplete="email" id="email" onChange={(event) => setEmail(event.target.value)} placeholder="you@example.com" required type="email" value={email} /></label>
+              <label htmlFor="password">Password<input autoComplete={register ? "new-password" : "current-password"} id="password" minLength={6} onChange={(event) => setPassword(event.target.value)} required type="password" value={password} /></label>
+              {authError && <p className="form-error" role="alert">{authError}</p>}
+              <button className="button button-primary button-wide" disabled={authBusy} type="submit">{authBusy ? "Please wait…" : register ? "Create account" : "Sign in"}</button>
+            </form>
+            <button className="auth-switch" onClick={() => { setRegister(!register); setAuthError(""); }} type="button">{register ? "Already have an account? Sign in" : "New here? Create an account"}</button>
           </section>
         </div>
       )}
