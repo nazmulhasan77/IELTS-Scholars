@@ -1,0 +1,6 @@
+"use client";
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+import { useAuth } from "../app/providers";
+const links = [["/dashboard","⌂","Dashboard"],["/history","↻","History"],["/mock","◇","Full Mock Test"],["/tests/reading","▤","Reading"],["/tests/listening","◉","Listening"],["/tests/writing","✎","Writing"],["/tests/speaking","◌","Speaking"],["/typing","⌨","Typing Practice"]];
+export default function AppShell({ children }: { children: ReactNode }) { const pathname=usePathname(); const {role,demoMode}=useAuth(); return <div className="product-shell"><aside className="product-sidebar"><a className="product-logo" href="/"><span>IS</span><strong>IELTS Scholars</strong></a><p className="side-label">Overview</p><nav>{links.map(([href,icon,label])=><a className={pathname===href?"active":""} href={href} key={href}><i>{icon}</i>{label}</a>)}</nav>{role==="admin"&&<><p className="side-label">Administration</p><nav><a className={pathname.startsWith("/admin")?"active":""} href="/admin"><i>⚙</i>Admin Panel</a></nav></>}<div className="side-account"><span>{demoMode?"DEMO MODE":role.toUpperCase()}</span><strong>{role==="admin"?"Administrator":"Scholar account"}</strong><a href="/login">Account settings →</a></div></aside><main className="product-main">{children}</main></div>; }
