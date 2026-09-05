@@ -11,6 +11,9 @@ export type IELTSQuestion = {
   answer?: string;
   points: number;
   instructions?: string;
+  alternativeAnswers?: string[];
+  explanation?: string;
+  paragraphRef?: string;
 };
 
 export type IELTSTest = {
@@ -27,6 +30,20 @@ export type IELTSTest = {
   taskPrompt?: string;
   speakingParts?: string[];
   questions: IELTSQuestion[];
+  taskType?: "task1" | "task2";
+  taskBadge?: string;
+  minWords?: number;
+  imageUrl?: string;
+  chartData?: {
+    title: string;
+    yAxisLabel?: string;
+    categories: string[];
+    series: { name: string; color: string; data: number[] }[];
+  };
+  difficulty?: string;
+  sampleAnswer?: string;
+  tags?: string[];
+  bandRubric?: Record<string, string>;
   createdAt?: string;
   updatedAt?: string;
 };

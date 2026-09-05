@@ -1,3 +1,53 @@
+"use client";
+
 import AppShell from "../../components/AppShell";
-const mockModules=[{name:"Reading",slug:"reading",tone:"blue",icon:"▤"},{name:"Listening",slug:"listening",tone:"orange",icon:"◌"},{name:"Writing",slug:"writing",tone:"pink",icon:"✎"},{name:"Speaking",slug:"speaking",tone:"green",icon:"◉"}];
-export default function Mock(){return <AppShell><section className="product-page mock-page"><a className="back-link" href="/dashboard">← Dashboard</a><header><span className="module-badge">FULL · IELTS MOCK</span><h1>Begin your <strong>Mock Test</strong></h1><p>Complete all four modules to receive a complete practice record.</p><div><span>Progress</span><b>0 / 4</b><i/></div></header><div className="mock-module-grid">{mockModules.map((m,i)=><article key={m.slug}><div><span className={`mock-icon ${m.tone}`}>{m.icon}</span><small>MODULE {i+1}</small></div><h2>{m.name}</h2><a className={m.tone} href={`/tests/${m.slug}`}>▶ Start {m.name} →</a></article>)}</div></section></AppShell>}
+import { useLanguage } from "../../lib/language-context";
+
+export default function Mock() {
+  const { t } = useLanguage();
+
+  const mockModules = [
+    { slug: "reading" as const, tone: "blue", icon: "▤", name: t.modules.reading.name },
+    { slug: "listening" as const, tone: "orange", icon: "◌", name: t.modules.listening.name },
+    { slug: "writing" as const, tone: "pink", icon: "✎", name: t.modules.writing.name },
+    { slug: "speaking" as const, tone: "green", icon: "◉", name: t.modules.speaking.name },
+  ];
+
+  return (
+    <AppShell>
+      <section className="product-page mock-page">
+        <a className="back-link" href="/dashboard">
+          {t.mock.backDashboard}
+        </a>
+        <header>
+          <span className="module-badge">{t.mock.badge}</span>
+          <h1>
+            {t.mock.title} <strong>{t.mock.titleStrong}</strong>
+          </h1>
+          <p>{t.mock.subtitle}</p>
+          <div>
+            <span>{t.mock.progress}</span>
+            <b>0 / 4</b>
+            <i />
+          </div>
+        </header>
+        <div className="mock-module-grid">
+          {mockModules.map((m, i) => (
+            <article key={m.slug}>
+              <div>
+                <span className={`mock-icon ${m.tone}`}>{m.icon}</span>
+                <small>
+                  {t.mock.moduleNum} {i + 1}
+                </small>
+              </div>
+              <h2>{m.name}</h2>
+              <a className={m.tone} href={`/tests/${m.slug}`}>
+                {t.mock.start} {m.name} →
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+    </AppShell>
+  );
+}

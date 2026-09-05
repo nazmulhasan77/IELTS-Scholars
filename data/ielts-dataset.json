@@ -1,0 +1,510 @@
+[
+  {
+    "id": "reading-coral-restoration",
+    "title": "Coral Reef Ecosystems · Test 1",
+    "module": "reading",
+    "trainingType": "academic",
+    "collection": "Cambridge Academic Practice",
+    "description": "An academic scientific passage examining marine biology, coral bleaching phenomena, and innovative active reef restoration strategies.",
+    "durationMinutes": 20,
+    "status": "published",
+    "difficulty": "Band 7.0-8.0",
+    "passage": "[Paragraph A] Coral reefs occupy less than one percent of the ocean floor, yet they provide a vital habitat for more than twenty-five percent of all known marine species. Often celebrated as the underwater rainforests of the world, these calcium carbonate structures protect coastlines from violent storm surges, nourish coastal fisheries, and generate billions of dollars annually through eco-tourism. However, rising sea-surface temperatures caused by climate change have triggered widespread coral bleaching—a lethal stress response where corals expel the symbiotic photosynthetic algae, known as zooxanthellae, living inside their tissues.\n\n[Paragraph B] Without zooxanthellae, corals lose their vibrant coloration and primary source of metabolic nourishment. If thermal anomalies endure for several consecutive weeks, entire reef communities experience mass mortality. In response to this ecological crisis, marine biologists across Australia, the Caribbean, and Southeast Asia have transitioned from passive marine reserves toward active ecological intervention. The foremost among these strategies is micro-fragmentation, pioneered by Dr. David Vaughan, where wild colonies are divided into millimeter-sized fragments that regenerate up to forty times faster than undisturbed wild colonies.\n\n[Paragraph C] Once fragments reach a resilient size in land-based nurseries, divers affix them onto degraded natural limestone substrates using marine epoxy or mineral accretion frameworks. Mineral Accretion Technology (MAT) employs low-voltage electrical currents passed through submerged steel meshes, which accelerates calcium carbonate deposition and reinforces larval settlement. Field assessments demonstrate that corals grown via MAT exhibit higher survival rates and faster calcification under elevated water temperatures.\n\n[Paragraph D] Despite these breakthroughs, conservationists caution that localized restoration cannot supersede systemic carbon mitigation. Large-scale outplanting requires significant human labor, specialized diving teams, and substantial financial resources. Rebuilding even a fraction of vulnerable reefs demands an estimated investment exceeding several hundred million dollars. Therefore, scientists urge policymakers to integrate active genetic resilience breeding alongside stringent global greenhouse gas reductions.",
+    "questions": [
+      {
+        "id": "rc1",
+        "type": "true-false-not-given",
+        "prompt": "Coral reefs cover more than five percent of the world's ocean floor.",
+        "options": ["TRUE", "FALSE", "NOT GIVEN"],
+        "answer": "FALSE",
+        "alternativeAnswers": ["false"],
+        "points": 1,
+        "paragraphRef": "Paragraph A",
+        "explanation": "Paragraph A explicitly states that coral reefs occupy less than one percent of the ocean floor."
+      },
+      {
+        "id": "rc2",
+        "type": "multiple-choice",
+        "prompt": "What happens during coral bleaching?",
+        "options": [
+          "Corals release mineral deposits onto the ocean floor",
+          "Corals expel their symbiotic photosynthetic algae",
+          "Predatory fish consume the calcium carbonate structures",
+          "Reefs migrate towards cooler polar currents"
+        ],
+        "answer": "Corals expel their symbiotic photosynthetic algae",
+        "points": 1,
+        "paragraphRef": "Paragraph A",
+        "explanation": "Paragraph A notes: 'corals expel the symbiotic photosynthetic algae, known as zooxanthellae, living inside their tissues.'"
+      },
+      {
+        "id": "rc3",
+        "type": "short-answer",
+        "prompt": "Who pioneered the technique of micro-fragmentation?",
+        "answer": "Dr. David Vaughan",
+        "alternativeAnswers": ["David Vaughan", "Dr David Vaughan"],
+        "points": 1,
+        "paragraphRef": "Paragraph B",
+        "explanation": "Paragraph B mentions 'micro-fragmentation, pioneered by Dr. David Vaughan'."
+      },
+      {
+        "id": "rc4",
+        "type": "short-answer",
+        "prompt": "Micro-fragments regenerate up to how many times faster than wild colonies?",
+        "answer": "40",
+        "alternativeAnswers": ["forty", "40 times", "forty times"],
+        "points": 1,
+        "paragraphRef": "Paragraph B",
+        "explanation": "Paragraph B states: 'regenerate up to forty times faster than undisturbed wild colonies.'"
+      },
+      {
+        "id": "rc5",
+        "type": "true-false-not-given",
+        "prompt": "Mineral Accretion Technology utilizes high-voltage alternating electrical power.",
+        "options": ["TRUE", "FALSE", "NOT GIVEN"],
+        "answer": "FALSE",
+        "alternativeAnswers": ["false"],
+        "points": 1,
+        "paragraphRef": "Paragraph C",
+        "explanation": "Paragraph C states that MAT employs 'low-voltage electrical currents', not high-voltage."
+      },
+      {
+        "id": "rc6",
+        "type": "multiple-choice",
+        "prompt": "What is the primary conclusion emphasized by conservation scientists in Paragraph D?",
+        "options": [
+          "Micro-fragmentation can single-handedly restore all ocean reefs",
+          "Local outplanting must be combined with worldwide carbon emissions cuts",
+          "Diving teams should be replaced entirely by automated underwater robots",
+          "Financial investments in marine biology should be shifted to agriculture"
+        ],
+        "answer": "Local outplanting must be combined with worldwide carbon emissions cuts",
+        "points": 1,
+        "paragraphRef": "Paragraph D",
+        "explanation": "Paragraph D emphasizes that localized restoration cannot replace systemic carbon mitigation and requires global greenhouse gas reductions."
+      }
+    ]
+  },
+  {
+    "id": "reading-ai-diagnostics",
+    "title": "Artificial Intelligence in Medicine · Test 2",
+    "module": "reading",
+    "trainingType": "academic",
+    "collection": "Cambridge Academic Practice",
+    "description": "An investigative academic passage exploring neural networks, radiomic imaging, and ethical clinical integration.",
+    "durationMinutes": 20,
+    "status": "published",
+    "difficulty": "Band 7.5-8.5",
+    "passage": "[Paragraph A] The integration of artificial intelligence into healthcare has accelerated rapidly over the last decade, transitioning from speculative laboratory research into frontline clinical practice. Deep learning algorithms trained on millions of anonymized radiological scans are now detecting malignant tumors, retinal microaneurysms, and cardiovascular irregularities with an accuracy rivaling—and in certain specialized subfields exceeding—experienced senior clinicians. By processing subtle pixel-level variations imperceptible to the human eye, AI triage algorithms help shorten diagnostic turnaround times in overburdened hospital emergency rooms.\n\n[Paragraph B] Medical imaging has served as the primary frontier for this algorithmic revolution. Convolutional neural networks (CNNs) break down high-resolution computed tomography (CT) and magnetic resonance imaging (MRI) scans into granular numerical matrices, searching for complex pathological patterns. In clinical mammography trials, computer-aided detection systems reduced false-negative findings by up to nine percent while significantly lowering the workload for radiologist second-reads.\n\n[Paragraph C] Despite statistical successes, biomedical ethicists highlight critical hurdles concerning the 'black box' nature of deep neural networks. Unlike deterministic rules-based clinical decision tools, deep networks cannot readily explain the precise causal reasoning underlying their predictions. If an algorithm erroneously flags a benign lesion as aggressive cancer, determining liability among software developers, healthcare providers, and hospital administrators remains legally unresolved. Moreover, algorithms trained on demographic datasets from affluent nations often suffer severe performance degradation when applied to ethnically diverse or under-resourced populations.\n\n[Paragraph D] Consequently, medical organizations universally advocate for an 'augmented intelligence' paradigm rather than autonomous algorithmic substitution. Under this framework, diagnostic tools serve as cognitive assistants to doctors, highlighting anomalies and cross-referencing pharmacological databases, while the ultimate prognostic judgment and patient communication remain firmly under human oversight.",
+    "questions": [
+      {
+        "id": "rai1",
+        "type": "true-false-not-given",
+        "prompt": "AI diagnostic models have entirely replaced human radiologists in frontline emergency rooms.",
+        "options": ["TRUE", "FALSE", "NOT GIVEN"],
+        "answer": "FALSE",
+        "alternativeAnswers": ["false"],
+        "points": 1,
+        "paragraphRef": "Paragraph A & D",
+        "explanation": "Paragraph A states AI triage algorithms assist triage, and Paragraph D clarifies organizations advocate for augmented intelligence rather than autonomous substitution."
+      },
+      {
+        "id": "rai2",
+        "type": "short-answer",
+        "prompt": "What specific neural network architecture is primarily utilized to analyze CT and MRI scans?",
+        "answer": "Convolutional neural networks",
+        "alternativeAnswers": ["convolutional neural networks", "CNN", "CNNs", "Convolutional neural network"],
+        "points": 1,
+        "paragraphRef": "Paragraph B",
+        "explanation": "Paragraph B explicitly mentions: 'Convolutional neural networks (CNNs) break down high-resolution computed tomography...'"
+      },
+      {
+        "id": "rai3",
+        "type": "short-answer",
+        "prompt": "By what percentage did computer-aided systems reduce false-negative mammography findings?",
+        "answer": "9%",
+        "alternativeAnswers": ["9 percent", "nine percent", "9", "nine"],
+        "points": 1,
+        "paragraphRef": "Paragraph B",
+        "explanation": "Paragraph B states: 'reduced false-negative findings by up to nine percent'."
+      },
+      {
+        "id": "rai4",
+        "type": "multiple-choice",
+        "prompt": "What does the term 'black box' refer to regarding deep neural networks?",
+        "options": [
+          "The expensive physical enclosure enclosing hospital servers",
+          "The difficulty in explaining the causal reasoning behind their predictions",
+          "The military encryption required for medical records",
+          "The complete absence of code documentation by developers"
+        ],
+        "answer": "The difficulty in explaining the causal reasoning behind their predictions",
+        "points": 1,
+        "paragraphRef": "Paragraph C",
+        "explanation": "Paragraph C explains deep networks 'cannot readily explain the precise causal reasoning underlying their predictions.'"
+      },
+      {
+        "id": "rai5",
+        "type": "true-false-not-given",
+        "prompt": "AI diagnostic systems perform equally well on every demographic population regardless of training data origin.",
+        "options": ["TRUE", "FALSE", "NOT GIVEN"],
+        "answer": "FALSE",
+        "alternativeAnswers": ["false"],
+        "points": 1,
+        "paragraphRef": "Paragraph C",
+        "explanation": "Paragraph C notes models trained on affluent nations 'often suffer severe performance degradation when applied to ethnically diverse or under-resourced populations.'"
+      },
+      {
+        "id": "rai6",
+        "type": "multiple-choice",
+        "prompt": "The 'augmented intelligence' model maintains that AI should act as…",
+        "options": [
+          "A replacement for general practitioners within ten years",
+          "A cognitive assistant supporting human physician judgment",
+          "An administrative billing engine for private health insurance",
+          "A robotic surgical operator functioning without nurses"
+        ],
+        "answer": "A cognitive assistant supporting human physician judgment",
+        "points": 1,
+        "paragraphRef": "Paragraph D",
+        "explanation": "Paragraph D defines augmented intelligence as diagnostic tools serving as 'cognitive assistants to doctors... while ultimate prognostic judgment... remains firmly under human oversight.'"
+      }
+    ]
+  },
+  {
+    "id": "reading-workplace-safety",
+    "title": "Workplace Health & Ergonomics · Test 3",
+    "module": "reading",
+    "trainingType": "general",
+    "collection": "General Training Official Series",
+    "description": "General Training reading test assessing occupational workplace guidelines, posture, and display screen regulations.",
+    "durationMinutes": 20,
+    "status": "published",
+    "difficulty": "Band 6.0-7.0",
+    "passage": "[Section 1: Display Screen Equipment (DSE) Regulations]\nAll corporate employers are statutory bound to conduct regular risk assessments for employees who use computers, monitors, and laptops continuously for periods exceeding ninety minutes per day. Prolonged display screen use is linked with musculoskeletal strain, repetitive strain injury (RSI), and optical fatigue. Employees are entitled to a full ergonomic assessment upon onboarding and whenever their physical workstations undergo substantial modification.\n\n[Section 2: Workstation Adjustments]\nDesks should be arranged so that monitors sit directly in front of the operator, approximately at arm's length (50 to 70 centimeters away). The top bezel of the display monitor should sit at or marginally below eye level to prevent excessive neck extension. Lumbar support cushions must be provided free of charge upon request. Chairs should feature five-caster wheel bases and adjustable armrests that permit forearms to rest parallel to the desktop surface.\n\n[Section 3: Rest Breaks and Optical Health]\nContinuous screen viewing without interruption causes eye fatigue. Under company occupational policy, staff must take a five-to-ten-minute pause away from screens after every fifty minutes of uninterrupted computer activity. Short, frequent intervals are substantially more restorative than infrequent long breaks. Additionally, the company reimburses annual comprehensive optical examinations up to £85 for all registered computer users, including prescription glasses specifically prescribed for display work.",
+    "questions": [
+      {
+        "id": "rws1",
+        "type": "short-answer",
+        "prompt": "How many minutes of daily computer usage obligates an employer to conduct a DSE assessment?",
+        "answer": "90",
+        "alternativeAnswers": ["ninety", "90 minutes", "ninety minutes"],
+        "points": 1,
+        "paragraphRef": "Section 1",
+        "explanation": "Section 1 specifies: 'periods exceeding ninety minutes per day.'"
+      },
+      {
+        "id": "rws2",
+        "type": "short-answer",
+        "prompt": "What is the recommended distance between the monitor and the operator in centimeters?",
+        "answer": "50 to 70",
+        "alternativeAnswers": ["50-70", "50 to 70 cm", "50-70cm", "50 - 70 centimeters"],
+        "points": 1,
+        "paragraphRef": "Section 2",
+        "explanation": "Section 2 states: 'approximately at arm's length (50 to 70 centimeters away).'"
+      },
+      {
+        "id": "rws3",
+        "type": "true-false-not-given",
+        "prompt": "Employees must pay an administrative fee for lumbar support cushions.",
+        "options": ["TRUE", "FALSE", "NOT GIVEN"],
+        "answer": "FALSE",
+        "alternativeAnswers": ["false"],
+        "points": 1,
+        "paragraphRef": "Section 2",
+        "explanation": "Section 2 specifies: 'Lumbar support cushions must be provided free of charge upon request.'"
+      },
+      {
+        "id": "rws4",
+        "type": "short-answer",
+        "prompt": "How often should workers take a five-to-ten minute break away from screens?",
+        "answer": "every 50 minutes",
+        "alternativeAnswers": ["50 minutes", "every fifty minutes", "after 50 minutes", "after every fifty minutes"],
+        "points": 1,
+        "paragraphRef": "Section 3",
+        "explanation": "Section 3 states: 'after every fifty minutes of uninterrupted computer activity.'"
+      },
+      {
+        "id": "rws5",
+        "type": "short-answer",
+        "prompt": "What maximum amount in pounds (£) will the company reimburse for annual eye examinations?",
+        "answer": "85",
+        "alternativeAnswers": ["£85", "85 pounds", "eighty five pounds"],
+        "points": 1,
+        "paragraphRef": "Section 3",
+        "explanation": "Section 3 states: 'reimburses annual comprehensive optical examinations up to £85'."
+      }
+    ]
+  },
+  {
+    "id": "listening-campus-accommodation",
+    "title": "University Housing Induction · Test 1",
+    "module": "listening",
+    "trainingType": "academic",
+    "collection": "Cambridge Practice Tests",
+    "description": "IELTS Listening Part 1 conversation between an international student and university accommodation officer.",
+    "durationMinutes": 12,
+    "status": "published",
+    "difficulty": "Band 6.5-7.5",
+    "audioUrl": "",
+    "passage": "Transcript (Part 1 - Accommodation Office Enquiry):\nOFFICER: Good morning! Welcome to the University Housing and Accommodation Bureau. How can I help you today?\nSTUDENT: Hello. My name is Elena Rostova. I am a new postgraduate student in Biochemical Engineering, and I would like to finalize my residential room allocation before orientation starts on Thursday.\nOFFICER: Welcome Elena. Let me look up your application on the portal. Ah, yes, Elena Rostova, student identification number ENG-84092. You have been assigned to Rowan Hall of Residence, block C, room number 314.\nSTUDENT: That sounds great. Is Rowan Hall catered or self-catered?\nOFFICER: It is a self-catered facility. You will have a shared kitchen on each corridor with two induction stoves, two refrigerators, and private lockable pantry cupboards. Your en-suite room includes a single bed, study desk, ergonomic chair, and high-speed fiber internet.\nSTUDENT: Excellent. What about laundry facilities and heating?\nOFFICER: Laundry facilities are located in the basement. Washing machines cost £2.50 per cycle, and tumble dryers are £1.50. You can pay using your contactless student smartcard. Heating runs automatically in winter between 6:00 AM and 10:00 PM.\nSTUDENT: Perfect. And what security deposit is required when collecting keys?\nOFFICER: The refundable deposit is exactly £200, payable by debit card or bank transfer upon collection.",
+    "questions": [
+      {
+        "id": "lac1",
+        "type": "short-answer",
+        "prompt": "What is the student's postgraduate field of study?",
+        "answer": "Biochemical Engineering",
+        "alternativeAnswers": ["biochemical engineering"],
+        "points": 1,
+        "explanation": "Elena explicitly introduces herself as a postgraduate student in Biochemical Engineering."
+      },
+      {
+        "id": "lac2",
+        "type": "short-answer",
+        "prompt": "Which Hall of Residence has the student been allocated to?",
+        "answer": "Rowan Hall",
+        "alternativeAnswers": ["Rowan", "Rowan Hall of Residence"],
+        "points": 1,
+        "explanation": "The officer states: 'You have been assigned to Rowan Hall of Residence'."
+      },
+      {
+        "id": "lac3",
+        "type": "short-answer",
+        "prompt": "What is Elena's allocated room number?",
+        "answer": "314",
+        "alternativeAnswers": ["Room 314", "room 314"],
+        "points": 1,
+        "explanation": "The officer confirms: 'block C, room number 314'."
+      },
+      {
+        "id": "lac4",
+        "type": "short-answer",
+        "prompt": "How much does a washing machine cycle cost in pounds (£)?",
+        "answer": "2.50",
+        "alternativeAnswers": ["£2.50", "2.5", "two pounds fifty"],
+        "points": 1,
+        "explanation": "The officer confirms: 'Washing machines cost £2.50 per cycle'."
+      },
+      {
+        "id": "lac5",
+        "type": "short-answer",
+        "prompt": "What is the refundable security deposit amount in pounds (£)?",
+        "answer": "200",
+        "alternativeAnswers": ["£200", "two hundred pounds", "200 pounds"],
+        "points": 1,
+        "explanation": "The officer states: 'The refundable deposit is exactly £200'."
+      },
+      {
+        "id": "lac6",
+        "type": "multiple-choice",
+        "prompt": "How can students pay for laundry machines in the basement?",
+        "options": [
+          "With paper notes and coins",
+          "Contactless student smartcard",
+          "International postal orders",
+          "Cash handed to the building warden"
+        ],
+        "answer": "Contactless student smartcard",
+        "points": 1,
+        "explanation": "The officer states: 'You can pay using your contactless student smartcard.'"
+      }
+    ]
+  },
+  {
+    "id": "listening-wildlife-sanctuary",
+    "title": "Riverside Wildlife Sanctuary Tour · Test 2",
+    "module": "listening",
+    "trainingType": "general",
+    "collection": "Cambridge Practice Tests",
+    "description": "IELTS Listening Part 2 monologue: guide explaining sanctuary attractions, wetland trails, and opening timings.",
+    "durationMinutes": 12,
+    "status": "published",
+    "difficulty": "Band 6.5-7.5",
+    "audioUrl": "",
+    "passage": "Transcript (Part 2 - Public Orientation Talk):\nGUIDE: Good afternoon everyone and welcome to the Riverside Wildlife Sanctuary and Botanical Wetlands. Before we begin our guided walk along the boardwalk, I would like to highlight key features of our conservation grounds.\nFirst, the sanctuary spans eighty-five hectares of protected floodplains and reedbeds, home to over 140 resident bird species. The Main Visitor Centre where we are standing is open daily from 9:00 AM until 5:30 PM. If you require wheelchair loan or binoculars for birdwatching, our information counter provides these free of charge upon presentation of photo ID.\nDirectly to the east is the Otter Wetland Enclosure. The otters are fed twice daily, first at eleven o'clock in the morning and again at 3:15 PM in the afternoon. It is an educational spectacle and highly recommended for photography enthusiasts.\nAlong the northern perimeter runs the Kingfisher Trail, which takes approximately forty-five minutes to complete on foot. Please observe that dogs, bicycles, and unmanned drones are strictly prohibited past this checkpoint to avoid disturbing nesting waterbirds.\nFinally, all visitors are invited to our Dragonfly Pavilion at 4:00 PM for an informative lecture on wetland ecology by senior ranger Martin Cole. Thank you for supporting our conservation trust!",
+    "questions": [
+      {
+        "id": "lws1",
+        "type": "short-answer",
+        "prompt": "How many hectares of protected wetland does the sanctuary span?",
+        "answer": "85",
+        "alternativeAnswers": ["eighty five", "85 hectares", "eighty-five hectares"],
+        "points": 1,
+        "explanation": "The guide states the sanctuary spans 'eighty-five hectares of protected floodplains'."
+      },
+      {
+        "id": "lws2",
+        "type": "short-answer",
+        "prompt": "At what time in the afternoon is the second otter feeding session held?",
+        "answer": "3:15",
+        "alternativeAnswers": ["3:15 PM", "3.15", "3.15 pm", "quarter past three"],
+        "points": 1,
+        "explanation": "The guide notes otters are fed at 11:00 AM and 'again at 3:15 PM in the afternoon'."
+      },
+      {
+        "id": "lws3",
+        "type": "short-answer",
+        "prompt": "How many minutes does it take to walk the Kingfisher Trail?",
+        "answer": "45",
+        "alternativeAnswers": ["forty five", "45 minutes", "forty-five minutes"],
+        "points": 1,
+        "explanation": "The guide says the trail 'takes approximately forty-five minutes to complete on foot'."
+      },
+      {
+        "id": "lws4",
+        "type": "multiple-choice",
+        "prompt": "Which item can visitors borrow for free from the information counter?",
+        "options": [
+          "Bicycles and helmets",
+          "Binoculars and wheelchairs",
+          "Camping tents and boots",
+          "Audio recording devices"
+        ],
+        "answer": "Binoculars and wheelchairs",
+        "points": 1,
+        "explanation": "The guide says: 'If you require wheelchair loan or binoculars... our information counter provides these free of charge'."
+      },
+      {
+        "id": "lws5",
+        "type": "short-answer",
+        "prompt": "What is the surname of the senior ranger hosting the 4:00 PM lecture?",
+        "answer": "Cole",
+        "alternativeAnswers": ["Martin Cole"],
+        "points": 1,
+        "explanation": "The guide names the senior ranger as 'Martin Cole'."
+      }
+    ]
+  },
+  {
+    "id": "writing-renewable-trends",
+    "title": "Writing Task 1 · Renewable Electricity Trends",
+    "module": "writing",
+    "trainingType": "academic",
+    "collection": "Scholars High-Band Suite",
+    "description": "Academic Writing Task 1 visual report analyzing trends in global renewable electricity generation between 2015 and 2025.",
+    "durationMinutes": 20,
+    "status": "published",
+    "taskType": "task1",
+    "taskBadge": "Academic Task 1 · Report",
+    "minWords": 150,
+    "difficulty": "Band 8.0+",
+    "taskPrompt": "The chart below displays global electricity generation by renewable energy source (Wind, Solar Photovoltaic, and Hydroelectric) measured in Terawatt-hours (TWh) from 2015 to 2025, with projections for 2025.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\nWrite at least 150 words.",
+    "chartData": {
+      "title": "Global Renewable Electricity Generation (2015 - 2025) in TWh",
+      "yAxisLabel": "Terawatt-hours (TWh)",
+      "categories": ["2015", "2018", "2021", "2025 (Proj.)"],
+      "series": [
+        { "name": "Hydroelectric", "color": "#0ea5e9", "data": [3880, 4120, 4350, 4700] },
+        { "name": "Wind", "color": "#10b981", "data": [830, 1270, 1860, 2900] },
+        { "name": "Solar PV", "color": "#f59e0b", "data": [260, 580, 1030, 2450] }
+      ]
+    },
+    "questions": [
+      {
+        "id": "wr1",
+        "type": "essay",
+        "prompt": "Write a well-structured academic report of at least 150 words analyzing the provided data.",
+        "points": 9
+      }
+    ],
+    "sampleAnswer": "The bar chart illustrates worldwide electricity production across three key renewable sources—hydroelectric, wind, and solar photovoltaic (PV)—measured in Terawatt-hours (TWh) over a ten-year period from 2015 to 2025, including projections for the final year.\n\nOverall, generation across all three renewable sectors expanded steadily over the timeframe. While hydroelectric power remained the dominant contributor throughout, solar photovoltaic energy recorded the most dramatic proportional surge, rising nearly tenfold by 2025.\n\nIn 2015, hydroelectric power accounted for the overwhelming majority of clean electricity at 3,880 TWh, far surpassing wind (830 TWh) and solar PV (260 TWh). Hydroelectric production grew moderately over the subsequent years, reaching 4,350 TWh in 2021 and an expected 4,700 TWh by 2025.\n\nIn stark contrast, wind and solar power experienced rapid exponential acceleration. Wind generation rose from 830 TWh in 2015 to 1,860 TWh by 2021, before being projected to reach 2,900 TWh in 2025. Solar PV exhibited an even sharper upward trajectory, quadrupling from 260 TWh to 1,030 TWh in 2021, and is projected to hit 2,450 TWh by 2025, closing the gap substantially with wind energy."
+  },
+  {
+    "id": "writing-space-exploration",
+    "title": "Writing Task 2 · Space Exploration vs Earth Priorities",
+    "module": "writing",
+    "trainingType": "academic",
+    "collection": "Scholars High-Band Suite",
+    "description": "Opinion essay exploring government funding allocations between astronomical research and addressing poverty and ecological challenges.",
+    "durationMinutes": 40,
+    "status": "published",
+    "taskType": "task2",
+    "taskBadge": "Academic Task 2 · Opinion Essay",
+    "minWords": 250,
+    "difficulty": "Band 8.0+",
+    "taskPrompt": "National governments allocate tens of billions of dollars annually to space exploration programs and interplanetary missions. Some argue that this expenditure is unjustified when urgent challenges such as poverty, hunger, and climate change remain unresolved on Earth.\n\nTo what extent do you agree or disagree with this view?\nGive reasons for your answer and include relevant examples from your knowledge or experience. Write at least 250 words.",
+    "questions": [
+      {
+        "id": "wse1",
+        "type": "essay",
+        "prompt": "Write a persuasive opinion essay responding to the prompt. Write at least 250 words.",
+        "points": 9
+      }
+    ],
+    "sampleAnswer": "In an era marked by profound humanitarian and environmental crises, the substantial financial resources directed toward space exploration are frequently met with intense public skepticism. Critics assert that extraterrestrial voyages represent an exorbitant indulgence while millions of people endure poverty, malnutrition, and ecological disruption. Although addressing terrestrial deprivation is indisputably paramount, I largely disagree with the proposition that space research should be curtailed, as astronomical innovation yields critical technologies and scientific breakthroughs indispensable for our planet's preservation.\n\nFirst and foremost, investments in space exploration generate monumental technological spin-offs that directly benefit life on Earth. Satellite infrastructure developed for space missions underpins modern communications, precision GPS navigation, and crucially, climate observation networks. Satellite remote sensing enables scientists to monitor deforestation rates in the Amazon, track accelerating polar ice melt, and predict catastrophic meteorological events with unprecedented precision. Without orbital surveillance systems engineered through aerospace exploration, formulating evidence-based disaster mitigation strategies and international climate treaties would be virtually impossible.\n\nFurthermore, scientific breakthroughs in aerospace laboratories routinely cascade into essential commercial and medical applications. For instance, technologies originally engineered for extraterrestrial life-support systems—such as advanced solar panel efficiency, water purification membranes, and compact biomedical sensors—are now deployed to supply clean drinking water and off-grid electricity to impoverished rural communities across the developing world. Consequently, the funding invested in astrophysics does not vanish into the cosmos; rather, it stimulates domestic manufacturing, fosters high-skilled employment, and develops scalable solutions for Earth's most pressing resource deficits.\n\nIn conclusion, while global leaders must maintain vigorous commitments toward eradicating poverty and curbing carbon emissions, curtailing space exploration would be fundamentally shortsighted. Aerospace science and terrestrial welfare are not mutually exclusive pursuits; rather, space technology serves as a vital catalyst for solving humanity's most complex challenges on Earth."
+  },
+  {
+    "id": "writing-community-park-letter",
+    "title": "General Writing Task 1 · Community Park Redevelopment",
+    "module": "writing",
+    "trainingType": "general",
+    "collection": "General Training Official Series",
+    "description": "Formal letter practice addressing local municipal authorities regarding conservation of neighborhood recreational amenities.",
+    "durationMinutes": 20,
+    "status": "published",
+    "taskType": "task1",
+    "taskBadge": "General Task 1 · Formal Letter",
+    "minWords": 150,
+    "difficulty": "Band 7.5+",
+    "taskPrompt": "You have recently discovered that your local municipal council plans to convert a historic community park in your neighborhood into a commercial multi-story car park.\n\nWrite a formal letter to the Director of Urban Planning. In your letter:\n• Explain why the park is of great importance to local residents\n• Describe the negative repercussions of constructing the car park\n• Propose a viable alternative solution to resolve the parking shortage\n\nWrite at least 150 words. You do not need to write any addresses.",
+    "questions": [
+      {
+        "id": "wcp1",
+        "type": "essay",
+        "prompt": "Write a formal letter of at least 150 words following official IELTS General Training conventions.",
+        "points": 9
+      }
+    ],
+    "sampleAnswer": "Dear Sir or Madam,\n\nI am writing to express the deep concern of the residents of Kingswood regarding the council's recently announced proposal to convert Victoria Green Park into a multi-story commercial parking facility.\n\nFor more than six decades, Victoria Green has served as an irreplaceable recreational and social sanctuary for our community. It provides a safe, verdant environment where young children play, elderly residents exercise daily, and local schools hold nature-based educational workshops. In an increasingly densely built urban district, this green space functions as an essential ecological buffer.\n\nReplacing this beloved park with a parking complex would bring severe negative repercussions. In addition to the irreversible loss of mature oak trees and local biodiversity, the resulting influx of commuter vehicular traffic will drastically exacerbate noise pollution and deteriorate ambient air quality along adjacent residential streets, compromising the safety of pedestrians and schoolchildren.\n\nTo alleviate downtown parking congestion without demolishing our community asset, I respectfully propose that the council redevelop the derelict industrial railway yard situated barely 400 meters north on Station Road. This underutilized brownfield plot possesses direct rail connectivity and would accommodate a modern park-and-ride depot without diminishing neighborhood wellbeing.\n\nThank you for considering our views, and I look forward to your response on this critical matter.\n\nYours faithfully,\n\nMarcus Vance"
+  },
+  {
+    "id": "speaking-technology-habits",
+    "title": "Speaking Test · Technology & Future Society",
+    "module": "speaking",
+    "trainingType": "academic",
+    "collection": "Cambridge Practice Tests",
+    "description": "Full three-part IELTS Speaking examination covering daily digital habits, personal productivity apps, and societal impacts of automation.",
+    "durationMinutes": 14,
+    "status": "published",
+    "difficulty": "Band 7.5-8.5",
+    "speakingParts": [
+      "Part 1 (Introduction & Interview):\n• What digital devices do you use on a daily basis?\n• How has the internet changed the way you study or work?\n• Do you believe people spend too much time on mobile phones nowadays?\n• What activities do you enjoy doing when you want to take a break from screens?",
+      "Part 2 (Cue Card / Long Turn - 1 Minute Preparation, 2 Minutes Speaking):\nDescribe a piece of technology or a software application that has significantly improved your daily life.\nYou should say:\n• What the technology or application is\n• How you learned to use it\n• How often you utilize it\n• And explain why it has had such a meaningful impact on your routine or productivity.",
+      "Part 3 (Analytical Two-Way Discussion):\n• How might artificial intelligence transform workplace dynamics in the coming decades?\n• Should governments implement stricter age regulations on children using social media platforms?\n• Is there a risk that people become overly dependent on navigation and automation technologies?"
+    ],
+    "questions": [
+      {
+        "id": "st1",
+        "type": "speaking-cue",
+        "prompt": "Record your response to the selected speaking parts using the in-browser audio recorder.",
+        "points": 9
+      }
+    ],
+    "sampleAnswer": "Part 1 Model Response:\n'I rely extensively on my laptop and smartphone for academic research and collaborative group work. While digital connectivity has streamlined document sharing and communication, I make a deliberate effort to disconnect in the evenings by reading physical books or going cycling in the local park.'\n\nPart 2 Model Response (Cue Card):\n'I would like to talk about an open-source reference and note-taking application called Zotero, which I adopted during the second year of my university degree. A visiting lecturer recommended it during a research methodology seminar, demonstrating how it automates citation bibliographies and synchronizes research papers across multiple devices. I utilize it almost daily whenever I draft academic essays or read scientific journals. Its impact on my academic life has been profound; previously, formatting bibliographies manually consumed countless hours and was prone to errors. With this software, my workflow has become exceptionally organized, allowing me to concentrate fully on critical analysis and argumentation rather than repetitive clerical formatting.'\n\nPart 3 Model Response:\n'Looking ahead, artificial intelligence will undoubtedly automate repetitive administrative responsibilities, compelling the workforce to prioritize higher-order cognitive capabilities such as strategic negotiation, empathetic communication, and creative problem-solving. However, educational institutions must ensure that curriculum frameworks adapt quickly to bridge potential technological skill divides.'"
+  },
+  {
+    "id": "speaking-travel-heritage",
+    "title": "Speaking Test · Travel, Tourism & Heritage",
+    "module": "speaking",
+    "trainingType": "general",
+    "collection": "Scholars High-Band Suite",
+    "description": "Three-part IELTS Speaking simulation evaluating travel habits, unforgettable cultural journeys, and preservation of heritage.",
+    "durationMinutes": 13,
+    "status": "published",
+    "difficulty": "Band 7.0-8.0",
+    "speakingParts": [
+      "Part 1 (Introduction):\n• Do you prefer traveling alone or with friends and family?\n• What kinds of destinations do you find most appealing when on holiday?\n• What was the most memorable trip you took during your childhood?",
+      "Part 2 (Cue Card - 1 Minute Prep, 2 Minutes Speaking):\nDescribe an unforgettable visit you made to a historical building or cultural landmark.\nYou should say:\n• Where the landmark was located\n• When and with whom you visited\n• What you saw and learned during the visit\n• And explain why this experience left such a lasting impression on you.",
+      "Part 3 (Analytical Discussion):\n• Why is it crucial for countries to allocate resources to preserving historical monuments?\n• What are the negative consequences of overtourism on local communities?\n• How can sustainable ecotourism be promoted effectively by tour operators?"
+    ],
+    "questions": [
+      {
+        "id": "sth1",
+        "type": "speaking-cue",
+        "prompt": "Deliver and record your responses across all three speaking sections.",
+        "points": 9
+      }
+    ],
+    "sampleAnswer": "Part 2 Model Cue Card:\n'I would like to describe my visit to the ancient subterranean stepwells of Abhaneri in Rajasthan, India, which I visited two summers ago alongside two close university friends. The monumental stepwell, known as Chand Baori, dates back over a thousand years and features more than 3,500 precisely sculpted stone steps cascading thirteen levels downward. Witnessing how ancient engineers mastered architectural cooling and rainwater harvesting long before modern technology left me with immense awe and respect for indigenous architectural wisdom.'"
+  }
+]

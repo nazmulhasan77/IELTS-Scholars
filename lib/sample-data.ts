@@ -1,6 +1,9 @@
-import type { IELTSTest } from "./types";
+"use client";
 
-export const SAMPLE_TESTS: IELTSTest[] = [
+import type { IELTSTest } from "./types";
+import rawDataset from "../data/ielts-dataset.json";
+
+const BASE_TESTS: IELTSTest[] = [
   {
     id: "reading-city-gardens",
     title: "Urban Gardens · Test 1",
@@ -37,6 +40,30 @@ export const SAMPLE_TESTS: IELTSTest[] = [
     ],
   },
   {
+    id: "writing-task1-renewable-energy",
+    title: "Task 1 Academic - Bar Chart: Renewable Energy",
+    module: "writing",
+    trainingType: "academic",
+    collection: "Academic Writing Task 1",
+    description: "Academic Task 1 bar chart data description practice with live word tracker and countdown timer.",
+    durationMinutes: 20,
+    status: "published",
+    taskType: "task1",
+    taskBadge: "Task 1 — Data Description",
+    minWords: 150,
+    taskPrompt: "The bar chart below shows the percentage of electricity generated from renewable sources in five countries (Germany, Denmark, Norway, Spain, and the UK) in 2010 and 2022.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+    chartData: {
+      title: "Percentage of Electricity from Renewable Sources (2010 vs 2022)",
+      yAxisLabel: "% of Electricity from renewable sources",
+      categories: ["Germany", "Denmark", "Norway", "Spain", "UK"],
+      series: [
+        { name: "2010", color: "#3266ad", data: [17, 32, 97, 30, 7] },
+        { name: "2022", color: "#c1581e", data: [45, 80, 99, 47, 42] },
+      ],
+    },
+    questions: [{ id: "w1", type: "essay", prompt: "Write at least 150 words.", points: 9 }],
+  },
+  {
     id: "writing-remote-work",
     title: "Writing Task 2 · Remote Work",
     module: "writing",
@@ -45,7 +72,10 @@ export const SAMPLE_TESTS: IELTSTest[] = [
     description: "Opinion essay practice with live word count and autosaved draft.",
     durationMinutes: 40,
     status: "published",
-    taskPrompt: "Some people believe working from home benefits employees and employers, while others think it damages teamwork. Discuss both views and give your own opinion.",
+    taskType: "task2",
+    taskBadge: "Task 2 — Opinion Essay",
+    minWords: 250,
+    taskPrompt: "Some people believe working from home benefits employees and employers, while others think it damages teamwork. Discuss both views and give your own opinion.\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
     questions: [{ id: "w1", type: "essay", prompt: "Write at least 250 words.", points: 9 }],
   },
   {
@@ -65,3 +95,12 @@ export const SAMPLE_TESTS: IELTSTest[] = [
     questions: [{ id: "s1", type: "speaking-cue", prompt: "Record your response to the selected speaking part.", points: 9 }],
   },
 ];
+
+export const EXTENDED_TESTS: IELTSTest[] = [
+  ...BASE_TESTS,
+  ...(rawDataset as IELTSTest[]).filter(
+    (item) => !BASE_TESTS.some((base) => base.id === item.id)
+  ),
+];
+
+export const SAMPLE_TESTS: IELTSTest[] = EXTENDED_TESTS;

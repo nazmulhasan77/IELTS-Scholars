@@ -6,6 +6,8 @@ import { doc, getDoc } from "firebase/firestore";
 import { firebaseConfigured, getFirebaseServices, initializeFirebaseAnalytics } from "../lib/firebase";
 import type { UserRole } from "../lib/types";
 
+import { LanguageProvider, useLanguage } from "../lib/language-context";
+
 type AuthState = { user: User | null; role: UserRole; loading: boolean; demoMode: boolean };
 const AuthContext = createContext<AuthState>({ user: null, role: "student", loading: true, demoMode: !firebaseConfigured });
 
@@ -31,7 +33,13 @@ export function Providers({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(() => state, [state]);
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <LanguageProvider>
+      <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+    </LanguageProvider>
+  );
 }
 
 export const useAuth = () => useContext(AuthContext);
+export { useLanguage };
+

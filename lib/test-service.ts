@@ -12,7 +12,19 @@ const ATTEMPT_KEY = "ielts-scholars-demo-attempts";
 function localTests(): IELTSTest[] {
   if (typeof window === "undefined") return SAMPLE_TESTS;
   const stored = window.localStorage.getItem(TEST_KEY);
-  return stored ? JSON.parse(stored) : SAMPLE_TESTS;
+  if (!stored) return SAMPLE_TESTS;
+  try {
+    const parsed: IELTSTest[] = JSON.parse(stored);
+    const missing = SAMPLE_TESTS.filter((st) => !parsed.some((p) => p.id === st.id));
+    if (missing.length > 0) {
+      const merged = [...parsed, ...missing];
+      window.localStorage.setItem(TEST_KEY, JSON.stringify(merged));
+      return merged;
+    }
+    return parsed;
+  } catch {
+    return SAMPLE_TESTS;
+  }
 }
 
 export async function listTests(module?: IELTSModule, includeDrafts = false): Promise<IELTSTest[]> {
@@ -21,8 +33,9 @@ export async function listTests(module?: IELTSModule, includeDrafts = false): Pr
   const constraints = includeDrafts ? [orderBy("updatedAt", "desc")] : [where("status", "==", "published")];
   const snapshot = await getDocs(query(collection(services.db, "tests"), ...constraints));
   const tests = snapshot.docs.map((item) => ({ id: item.id, ...item.data() } as IELTSTest));
-  const resolved = tests.length ? tests : SAMPLE_TESTS;
-  return resolved.filter((test) => !module || test.module === module);
+  const missing = SAMPLE_TESTS.filter((st) => !tests.some((t) => t.id === st.id));
+  const resolved = [...tests, ...missing];
+  return resolved.filter((test) => (!module || test.module === module) && (includeDrafts || test.status === "published"));
 }
 
 export async function getTest(id: string): Promise<IELTSTest | null> {
@@ -86,11 +99,14 @@ export async function listAttempts(userId: string): Promise<Attempt[]> {
 }
 
 export function objectiveScore(test: IELTSTest, answers: Record<string, string>) {
+  const normalize = (s: string) => s.trim().toLowerCase().replace(/[.]+$/, "");
   const objective = test.questions.filter((question) => question.answer);
   const score = objective.reduce((sum, question) => {
-    const actual = (answers[question.id] ?? "").trim().toLowerCase();
-    const expected = (question.answer ?? "").trim().toLowerCase();
-    return sum + (actual === expected ? question.points : 0);
+    const actual = normalize(answers[question.id] ?? "");
+    const expected = normalize(question.answer ?? "");
+    const alternatives = (question.alternativeAnswers ?? []).map(normalize);
+    const isCorrect = actual.length > 0 && (actual === expected || alternatives.includes(actual));
+    return sum + (isCorrect ? question.points : 0);
   }, 0);
   const total = objective.reduce((sum, question) => sum + question.points, 0);
   const ratio = total ? score / total : 0;
